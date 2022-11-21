@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #eee;
+    }
+    /* *{
+        border: 1px solid black;
+    } */
+    .yinYing {
+      box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+        rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+    }
+    .flex {
+      display: flex;
+    }
+    .baise {
+      background-color: white;
+    }
+    .flex1 {
+      flex: 1;
+    }
+    .column {
+      flex-direction: column;
+    }
+    .mg8 {
+      margin: 8px;
+    }
+    .mgr8 {
+      margin-right: 8px;
+    }
+    .mgt8 {
+      margin-top: 8px;
+    }
+    @media (max-width: 600px) {
+      .ceBian {
+        display: none;
+      }
+      .neirong {
+        flex-direction: column;
+      }
+      .shujuqu {
+        flex-direction: column;
+      }
+      .youqu {
+        margin-left: 8px;
+      }
+      .shuju {
+        margin: 0 0 8px;
+        flex: auto;
+      }
+    }
+    .neirong::-webkit-scrollbar {
+      display: none;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      background-color: #f1f1f1;
+    }
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+    li a:hover {
+      background-color: #555;
+      color: white;
+    }
+    .suo {
+      float: right;
+      padding: 8px;
+      border: none;
+      margin-top: 12px;
+      margin-right: 100px;
+      font-size: 17px;
+      border-radius: 10px;
+    } 
+    .dabeijing{
+       background-image: url("https://b.zol-img.com.cn/sjbizhi/images/10/750x530/1572642352874.jpg");
+    }
+  </style>
+  <body class="flex">
+    <!--侧边栏-->
+    <div style="width: 200px; z-index: 2" class="ceBian baise yinYing dabeijing">
+      <!--头像栏-->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex dabeijing"
+      >
+        <img src="./cc.png.jpg" width="40px" height="40px" alt="cc" />
+        <div style="margin-left: 10px">冲冲</div>
+      </div>
+      <!--导航栏-->
+      <div class="flex1 dabeijing">
+        <ul>
+          <li><a href="#home">你</a></li>
+          <li><a href="#news">真</a></li>
+          <li><a href="#contact">的</a></li>
+          <li><a href="https://phat.jd.com/10-185.html">京东品牌男鞋</a></li>
+          <li><a href="https://uland.taobao.com/sem/tbsearch?spm=a2e0b.20350158.1998559106.6.7297468alt1n25&refpid=mm_26632360_8858797_29866178&keyword=%E7%9D%A1%E8%A1%A3&clk1=1ef3a75bcf0cc84153be521eabdf76f1&upsId=1ef3a75bcf0cc84153be521eabdf76f1&pid=mm_26632360_8858797_29866178&union_lens=recoveryid%3A201_33.63.246.42_16063748_1668848654954%3Bprepvid%3A201_33.63.246.42_16063748_1668848654954">淘宝睡衣店</a></li>
+          <li><a href="https://www.runoob.com/">联系我</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--主区域-->
+    <div class="flex1 flex column dabeijing dabeijing">
+      <!--头部栏-->
+      <div style="height: 60px; z-index: 1" class="baise yinYing dabeijing">
+        <!--搜索框-->
+        <div class="suo dabeijing">
+          <input type="text" id="i-advanced-search" placeholder="请输入↵" />
+        </div>
+      </div>
+      <!--内容区-->
+      <div style="overflow: auto" class="neirongflex1 flex dabeijing">
+        <!--左区-->
+        <div style="flex: 3" class="flex column mg8 dabeijing">
+          <!--数据区-->
+          <div class="shujuqu flex dabeijing">
+            <!--数据块-->
+            <div
+              style="height: 100px"
+              class="shuju flex1 baise mgr8 yinYing"
+            ></div>
+            <div
+              style="height: 100px"
+              class="shuju flex1 baise mgr8 yinYing"
+            ></div>
+            <div
+              style="height: 100px"
+              class="shuju flex1 baise mgr8 yinYing"
+            ></div>
+            <div style="height: 100px" class="shuju flex1 baise yinYing"></div>
+          </div>
+          <!--列表区-->
+          <div class="flex column">
+            <!--列表项-->
+            <div style="height: 160px" class="baise mgt8 yinYing"></div>
+            <div style="height: 160px" class="baise mgt8 yinYing"></div>
+            <div style="height: 160px" class="baise mgt8 yinYing"></div>
+          </div>
+        </div>
+        <!--右区-->
+        <div style="flex: 1" class="youqu flex column mgt8 mgr8">
+          <!--提示区-->
+          <div style="height: 150px" class="baise yinYing"></div>
+          <!--消息区-->
+          <div style="height: 300px" class="baise mgt8 yinYing"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
