@@ -1,42 +1,684 @@
 <!DOCTYPE html>
-<!-- saved from url=(0035)https://cai-chong0825.github.io/cc/ -->
-<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>欢迎来到我的网站</title>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Village</title>
     <style>
       body {
-        margin: 0;
+        background-color: #f7f7f9;
+        background-size: 0;
+      }
+
+      page {
+        display: table;
+        table-layout: fixed;
+        padding: 40px 0;
+        width: 100%;
+        background-size: cover;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .page1 {
+        background-image: url(https://raw.githubusercontent.com/cai-chong0825/cc/main/cai.png.webp);
+        height: 100vh;
+        background-color: transparent;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        padding: 0;
+      }
+
+      .page1:after,
+      .page3:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .table_cell {
+        display: table-cell;
+        vertical-align: middle;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+      }
+
+      .mText {
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .mText h2 {
+        font-size: 26px;
+        letter-spacing: 8px;
+      }
+
+      .mText p {
+        letter-spacing: 8px;
+        margin: 20px 0;
+        font-size: 16px;
+      }
+
+      #next {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        margin-left: -24px;
+        z-index: 0;
+        -webkit-transition: all 0.5s ease-out;
+        transition: all 0.5s ease-out;
+        cursor: pointer;
+      }
+
+      #next:hover {
+        background-color: #ee2c2c;
+      }
+
+      #next:after {
+        display: inline-block;
+        font-family: FontAwesome;
+        content: "\f107";
+        color: #ffffff;
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+      }
+
+      .page2 {
+        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        font-family: "Microsoft YaHei Mono";
+      }
+
+      .article_box {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .title h1 {
+        font-size: 20px;
+        padding-bottom: 50px;
+        position: relative;
+      }
+
+      .title h1:after {
+        position: absolute;
+        width: 50px;
+        height: 2px;
+        content: "";
+        left: 50%;
+        margin-left: -25px;
+        bottom: 35px;
+        background-color: #ee2c2c;
+      }
+
+      .page3 {
+        padding: 100px 0;
+        background-image: url(https://raw.githubusercontent.com/cai-chong0825/cc/main/cai.png.webp);
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .about_box {
+        width: 100%;
+        position: relative;
+        color: #ffffff;
+        font-family: "Microsoft YaHei Mono";
+      }
+
+      .about {
+        width: 1000px;
+        margin: auto;
+        text-align: center;
+      }
+
+      .about ul li {
+        display: inline-block;
+        width: 200px;
+        height: 46px;
+        margin: 10px;
+        border: 1px solid #b4b4b4;
+        position: relative;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .about ul li:after {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 46px;
+        background-color: #ee2c2c;
+        opacity: 0.5;
+        -webkit-transition: width 0.6s;
+        -moz-transition: width 0.6s;
+        -ms-transition: width 0.6s;
+        -o-transition: width 0.6s;
+        transition: width 0.6s;
+      }
+
+      .about ul li:hover:after {
+        width: 200px;
+      }
+
+      .about ul li a {
+        display: block;
+        line-height: 26px;
+        padding: 10px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 14px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .about ul li a i {
+        margin-right: 5px;
+        font-size: 14px;
+        width: 20px;
+      }
+
+      .links {
+        width: 1000px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+
+      .links ul li {
+        float: left;
+        width: 25%;
+      }
+
+      .link {
+        float: left;
+        padding: 0 30px 20px;
+      }
+
+      .link a {
+        display: block;
+        padding: 20px;
+        min-width: 170px;
+        border-radius: 10px;
+      }
+
+      .page5 {
+        background-color: #232328;
+        padding: 60px 0;
+      }
+
+      .footer_box {
+        width: 1000px;
+        position: relative;
+        margin: 0 auto;
+        padding-left: 60px;
+      }
+
+      .footer > li {
+        display: block;
+        float: left;
+        line-height: 40px;
+        width: 33.33%;
+      }
+
+      .footer > li > h2 {
+        color: #ffffff;
+        font-size: 22px;
+        margin-bottom: 10px;
+        letter-spacing: 5px;
+      }
+
+      .footer > li > p {
+        color: #eee;
+      }
+
+      .footer > li > a {
+        display: block;
+        line-height: 38px;
+        width: 68px;
+        text-align: center;
+        padding: 0 18px;
+        font-size: 14px;
+        border: none;
+        color: #ffffff;
+        border-radius: 2px;
+        background-color: rgba(238, 44, 44, 0.9);
+        margin-top: 15px;
+      }
+
+      .footer > li > button:hover {
+        background-color: rgba(238, 44, 44, 1);
+      }
+
+      .footer > li > h3 {
+        color: #ffffff;
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 100;
+      }
+
+      .all_link > li {
+        float: left;
+        width: 50%;
+        line-height: 38px;
+        font-size: 14px;
+      }
+
+      .all_link > li > a {
+        color: #eeeeee;
+        letter-spacing: 1px;
+      }
+
+      .all_link > li > a:hover {
+        color: #ee2c2c;
+      }
+
+      .all_link > li > a > i {
+        margin-right: 5px;
+      }
+
+      #contact > li {
+        color: #eeeeee;
+        line-height: 38px;
+        font-size: 14px;
+      }
+
+      #contact > li > i {
+        margin-right: 10px;
+        width: 20px;
+        font-size: 16px;
+        color: #eeeeee;
+      }
+
+      #loading {
+        background-color: #374140;
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 1;
+        margin-top: 0;
+        top: 0;
+      }
+
+      #loading-center {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      #loading-center-absolute {
+        position: absolute;
+        left: calc(50% - 75px);
+        top: calc(50% - 75px);
+        height: 150px;
+        width: 150px;
+      }
+
+      .object {
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        float: left;
+        margin-right: 15px;
+        margin-left: 15px;
+        margin-top: 65px;
+        -moz-border-radius: 50% 50% 50% 50%;
+        -webkit-border-radius: 50% 50% 50% 50%;
+        border-radius: 50% 50% 50% 50%;
+      }
+
+      #object_one {
+        -webkit-animation: object 1.5s infinite;
+        animation: object 1.5s infinite;
+      }
+
+      #object_two {
+        -webkit-animation: object 1.5s infinite;
+        animation: object 1.5s infinite;
+        -webkit-animation-delay: 0.25s;
+        animation-delay: 0.25s;
+      }
+
+      #object_three {
+        -webkit-animation: object 1.5s infinite;
+        animation: object 1.5s infinite;
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5s;
+      }
+
+      @-webkit-keyframes object {
+        75% {
+          -webkit-transform: scale(0);
+          -moz-transform: scale(0);
+          -ms-transform: scale(0);
+          -o-transform: scale(0);
+          transform: scale(0);
+        }
+      }
+
+      @keyframes object {
+        75% {
+          -webkit-transform: scale(0);
+          -moz-transform: scale(0);
+          -ms-transform: scale(0);
+          -o-transform: scale(0);
+          transform: scale(0);
+        }
+      }
+
+      @media screen and (max-width: 500px) {
+        .page1 {
+          background-position: 58%;
+        }
+
+        .about {
+          width: 90%;
+        }
+
+        .links {
+          width: 90%;
+        }
+
+        .links ul li {
+          width: 50%;
+        }
+
+        .link {
+          padding: 0;
+        }
+
+        .link a {
+          min-width: 120px;
+          width: 120px;
+        }
+
+        .article_info > i:nth-child(n + 2) {
+          margin-left: 20px;
+        }
+
+        .footer_box {
+          width: 90%;
+          padding: 0 15px;
+        }
+
+        .footer > li {
+          width: 100%;
+          margin-bottom: 30px;
+        }
+
+        .footer > li:last-child {
+          margin-bottom: 0;
+        }
       }
     </style>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://wx3.sinaimg.cn/small/007aGNoFly1fvysv6bn70g305k05k3yy.gif"
+    />
+    <!--加载cdn的css文件-->
+    <link
+      href="https://lib.baomitu.com/animate.css/3.7.0/animate.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/base.min.css" />
+    <link rel="stylesheet" href="../../css/baseArticle.min.css" />
+    <link rel="stylesheet" href="../../css/index.min.css" />
   </head>
   <body>
-    <div style="background-color: #f1f1f1; text-align: center; padding: 40px">
-      <img src="./https://s1.328888.xyz/2022/09/14/cFqeN.png" alt="冲冲" width="80px" height="80px">
+    <!--header-->
+    <div id="header"></div>
+    <!--page one-->
+    <page class="page1">
+      <div class="table_cell">
+        <div class="mText wow zoomIn" data-wow-duration="2s">
+          <h2>Village</h2>
+          <p>我们无法做伟大的人，我们只能心怀伟大的爱做细微的事情</p>
+        </div>
+        <div class="wow fadeInUp" data-wow-duration="2s" id="next"></div>
+      </div> </page
+    ><!--page two-->
+    <page class="page2">
+      <div class="table_cell">
+        <div class="article_box">
+          <div class="title">
+            <div class="wow fadeInDown" data-wow-delay=".2s">
+              <h1>热门文章</h1>
+            </div>
+          </div>
+          <div class="article">
+            <div class="news" id="article"></div>
+          </div>
+        </div>
+      </div>
+    </page>
+    <!--page three-->
+    <page class="page3">
+      <div class="table_cell">
+        <div class="about_box">
+          <div class="about">
+            <ul>
+              <li class="wow fadeInLeft">
+                <a href="/about.html"
+                  ><i class="fa fa-user-circle-o"></i>About</a
+                >
+              </li>
+              <li class="wow fadeInRight">
+                <a href="/friendLink.html"
+                  ><i class="fa fa-handshake-o"></i>Links</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div> </page
+    ><!--page four-->
+    <page class="page4">
+      <div class="table_cell">
+        <div>
+          <div class="title wow fadeInDown" data-wow-delay=".2s">
+            <h1>亲密的朋友</h1>
+          </div>
+          <div class="links" id="friendLinks"></div>
+        </div>
+      </div> </page
+    ><!--page five-->
+    <page class="page5">
+      <div class="table_cell wow fadeInUp" data-wow-delay=".2s">
+        <div class="footer_box">
+          <ul class="footer">
+            <li>
+              <h2>Village</h2>
+              <p>如果提前知道你要面对的人生，你是否还有勇气重新来一遍</p>
+              <a href="/about.html">关于我</a>
+            </li>
+            <li>
+              <h3>相关链接</h3>
+              <ul class="all_link">
+                <li>
+                  <a href="/"><i class="fa fa-home"></i>Index</a>
+                </li>
+                <li>
+                  <a href="/article.html"><i class="fa fa-book"></i>Articles</a>
+                </li>
+                <li>
+                  <a href="/friendLink.html"
+                    ><i class="fa fa-share"></i>Links</a
+                  >
+                </li>
+                <li>
+                  <a href="/about.html"><i class="fa fa-files-o"></i>About</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3>联系我</h3>
+              <ul id="contact">
+                <li><i class="fa fa-map"></i>Address：阿尔法猩球101号</li>
+                <li><i class="fa fa-qq"></i>QQ：3181879344</li>
+                <li><i class="fa fa-envelope"></i>Email：3181879344@qq.com</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </page>
+    <div class="rights">版权所有AZJ@二人世界</div>
+    <!--回到顶部-->
+    <div id="fixBars"></div>
+    <div id="loading">
+      <div id="loading-center">
+        <div id="loading-center-absolute">
+          <div class="object" id="object_one"></div>
+          <div class="object" id="object_two"></div>
+          <div class="object" id="object_three"></div>
+        </div>
+      </div>
     </div>
-    <div style="
-        max-width: 700px;
-        maring: 30px autd;
-        padding: 15px;
-        line-height: 1.7;
-        color: rgba(0, 140, 255, 0.975);
-      ">
-      <p>你们好，我是这个网站的主人</p>
-      <p>叫我冲冲</p>
-      <p>刚接触编程不久</p>
-      <p>还是个新手小白</p>
-      <p>有很多问题不懂，还得继续努力学习，一起加油吧！</p>
-      <p>下面的链接是我正在跟着学习的网站，感兴趣可以点进去一起学习哈</p>
-    </div>
-    <div style="
-        background-color: #f1f1f1;
-        text-align: center;
-        padding: 40px;
-        font-size: 12px;
-      ">
-      <p>我的网站</p>
-      <a href="https://www.midorg.com/">友情链接</a>
-    </div>
-  
+    <script src="https://lib.baomitu.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://lib.baomitu.com/wow/1.0.1/wow.min.js"></script>
+    <script src="../../js/index.min.js"></script>
+    <script src="../../js/template/art-template.js"></script>
+    <script src="../../js/template.min.js"></script>
+    <script src="../../js/base.min.js"></script>
+    <script>
+      (function () {
+        var bp = document.createElement("script");
+        var curProtocol = window.location.protocol.split(":")[0];
+        if (curProtocol === "https") {
+          bp.src = "https://zz.bdstatic.com/linksubmit/push.js";
+        } else {
+          bp.src = "http://push.zhanzhang.baidu.com/push.js";
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+      })();
+      /**
+       * 博客文章模板
+       *
+       */
+      var article = `<ul>
+                    {{each articleList value index}}
+                        <li class="wow fadeInUp">
+                            <div class="single_new">
+                                <a class="new" href="detail.html?id={{value.id}}" target="_blank">
+                                    <div class="articleImg" style="background-image: url('{{value.image}}')"></div>
+                                    <div class="archive_content">
+                                        <span>
+                                            {{@value.topContent}}
+                                        </span>
+                                    </div>
+                                </a>
+                                <div class="article_other">
+                                    <h2 class="article_title">
+                                        <a href="/detail.html?id={{value.id}}" target="_blank"> 
+                                            {{value.title}}
+                                        </a>
+                                    </h2>
+                                    <span class="article_info">
+                                        <i class="fa fa-clock-o"></i>{{value.updateTime}}
+                                        <i class="fa fa-eye"></i>{{value.viewNum}}
+                                        <i class="fa fa-heart"></i>{{value.praiseNum}}
+                                        <i class="fa fa-comment"></i>{{value.commentNum}}
+                                    </span>
+                                </div>
+                            </div>
+                        </li>
+                  {{/each}}
+                </ul>`;
 
-</body></html>
+      var friendLinks = `<ul>
+                        {{each linkList link index}}
+                            <li class="wow fadeInUp">
+                                <div class="link">
+                                    <a href="{{link.address}}" target="_blank">
+                                        <img src="{{link.logo}}">
+                                        <h3>{{link.linkName}}</h3>
+                                        <p>{{link.content}}</p>
+                                    </a>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>`;
+
+      $(function () {
+        $("#loading").fadeOut(500);
+        // next 按钮事件
+        $("#next").click(function () {
+          $("html,body").animate(
+            {
+              scrollTop: $(".page1").outerHeight() + 1,
+            },
+            600
+          );
+        });
+        // 解析article
+        var articleRender = template.compile(article);
+        var articleHtml = "";
+        $.ajax({
+          type: "POST",
+          url: "/index/article.action",
+          success: function (res) {
+            let articleData = {
+              articleList: res.data,
+            };
+            articleHtml = articleRender(articleData);
+            $("#article").html(articleHtml);
+          },
+        });
+
+        // 解析friendLink
+        var linksRender = template.compile(friendLinks);
+        var linksHtml = "";
+        $.ajax({
+          type: "POST",
+          url: "/index/friendLink.action",
+          success: function (res) {
+            if (res.status == 200) {
+              var linksData = {
+                linkList: res.data,
+              };
+              linksHtml = linksRender(linksData);
+              $("#friendLinks").html(linksHtml);
+            }
+          },
+        });
+      });
+
+      $(document).keyup(function (event) {
+        if (event.keyCode == 13) {
+          $("a[href='/article.html']")[0].click();
+        }
+      });
+    </script>
+  </body>
+</html>
